@@ -8,8 +8,7 @@ if (($handle = fopen("test2.csv", "r")) !== FALSE) {
    echo '<table>';
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
         $num = count($data);
-        //echo "<p> $num fields in line $r: <br /></p>\n";
-		echo '<tr>';
+       echo '<tr>';
 		echo '<td><input type="checkbox" name="approve_date" id="approve_date'.$r.'" value="'.$r.'"></td>';
         $r++;
         for ($c=0; $c < $num; $c++) {
@@ -34,7 +33,6 @@ if (($handle = fopen("test2.csv", "r")) !== FALSE) {
 			$row0   = $result0->fetch_assoc();
 			if($row0["numrow"] == 0){
 			   if($data[1]!=''){
-			   	
 				$sql1 = "INSERT INTO `districtlist` ( `stateid`, `district`)
 									VALUES (".$row['id'].",'".$data[1]."')";
 						$conn->query($sql1);
