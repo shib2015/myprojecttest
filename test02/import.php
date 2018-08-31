@@ -1,8 +1,5 @@
 <?php 
 $conn   = mysqli_connect("localhost","root","","mytestdb") or die('Error');
-
-
-
 $r = 1;
 if (($handle = fopen("test2.csv", "r")) !== FALSE) {
    echo '<table>';
